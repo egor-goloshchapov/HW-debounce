@@ -22,13 +22,10 @@ function debounce(func, wait) {
   });
 
 
-
 const box = document.getElementById("box");
 
-const moveBox = (event) => {
-    box.style.transform = `translate(${event.clientX}px, ${event.clientY}px)`
-}
-
-document.addEventListener("mousemove", _.debounce(moveBox, 100))
+box.addEventListener("mousemove", _.debounce((event) => {
+box.style.transform = `translate(${event.clientX}px, ${event.clientY}px)`
+}, 100))
 
 
